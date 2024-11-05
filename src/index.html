@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/output.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="meals">
+  <div>
+    <div class="mainNavTog d-flex fixed">
+      <div class="mainsideClose min-h-screen text-white">
+          <div class="sidebar  overflow-hidden border-r">
+            <div class="flex h-screen flex-col justify-between pt-2 pb-6">
+              <div>
+  
+                <ul class="mt-6 space-y-2 tracking-wide">
+                  <li onclick="showSearchInputs(); closeSideNav();" class="min-w-max">
+                    <a href="#inSearch" class="bg group flex items-center space-x-4 rounded-full px-4 py-3 text-gray-600">
+                      <span class="group-hover:text-gray-700">Search</span>
+                    </a>
+                  </li>
+                  <li onclick="getCategories(); closeSideNav();" class="min-w-max">
+                    <a href="#" class="bg group flex items-center space-x-4 rounded-full px-4 py-3 text-gray-600">
+                      <span class="group-hover:text-gray-700">Categories</span>
+                    </a>
+                  </li>
+                  <li onclick="getArea(); closeSideNav();" class="min-w-max">
+                    <a href="#" class="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600">
+                      <span class="group-hover:text-gray-700">Area</span>
+                    </a>
+                  </li>
+                  <li class="min-w-max">
+                    <a href="#" class="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600">
+                      <span  onclick="getIngredients(); closeSideNav();" class="group-hover:text-gray-700">Ingredients</span>
+                    </a>
+                  </li>
+                  <li onclick="showContacts(); closeSideNav();" class="min-w-max">
+                    <a href="#" class="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600">
+                      <span class="group-hover:text-gray-700">Contact Us</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="icons">
+                  <i class="fa-brands fa-facebook"></i>
+                  <i class="fa-brands fa-twitter"></i>
+                  <i class="fa-solid fa-globe"></i>
+              </div>
+              <p class="text">
+                  Copyright Â© 2019 All Rights Reserved.
+              </p>
+  
+            </div>
+            
+          </div>
+        </div>
+        <div class="flex closeSider d-flex flex-col bg-gray-50 justify-between items-center">
+          <div class="sideimg">
+              <img src="./imgs/logo.png" alt="">
+          </div>
+          <div class="openClose">
+              <i onclick="changeIcon(this)" class="open-close fa-solid fa-bars fa-3x"></i>
+            </div>
+            <div class="sideicons flex flex-col">
+              <i class="fa-solid fa-globe mb-1"></i>
+              <i class="fa-solid fa-share-nodes mb-3"></i>
+            </div>
+        </div>
+  
+  </div>
+  <section >
+    <div id="searchContainer" class=" container mx-auto flex">
+
+    </div>
+  </section>
+
+<div class="load flex  justify-center items-center">
+  <span class="loader"></span>
+</div>
+
+    <div class="container mx-auto p-12  ">
+      <!--         content -->
+      <div id="rowData" class="container mx-auto grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-0 place-items-center gap-6 w-90">
+
+      </div> 
+
+      </div>
+
+
+
+   
+    <section id="footer" class="hidden">
+      <div class="conect font-[sans-serif] flex md:gap-5 grid sm:grid-cols-1 md:grid-cols-2">
+        <div class="mt-8 space-y-4">
+            <input type='text' id="name" placeholder='Enter Your Name'
+                class="w-full rounded-md py-3 px-4 text-gray-800 bg-gray-100 focus:bg-white text-sm outline-blue-500" />
+            <input type='text' id="phone" placeholder='Enter Your Phone'
+                class="w-full rounded-md py-3 px-4 text-gray-800 bg-gray-100 focus:bg-white text-sm outline-blue-500" />
+            <input type='password' id="password" placeholder='Enter Your Password'
+                class="w-full rounded-md py-3 px-4 text-gray-800 bg-gray-100 focus:bg-white text-sm outline-blue-500" />
+        </div>
+        <div class="mt-8 space-y-4">
+            <input type='email' id="email" placeholder='Enter Your Email'
+                class="w-full rounded-md py-3 px-4 text-gray-800 bg-gray-100 focus:bg-white text-sm outline-blue-500" />
+            <input type='number' id="age" placeholder='Enter Your Age'
+                class="w-full rounded-md py-3 px-4 text-gray-800 bg-gray-100 focus:bg-white text-sm outline-blue-500" />
+            <input type='password' id="rePassword" placeholder='Re Password'
+                class="w-full rounded-md py-3 px-4 text-gray-800 bg-gray-100 focus:bg-white text-sm outline-blue-500" />
+        </div>
+      </div>
+      <div class="btn">
+        <button type='button' id="submitBtn"
+        class="text-white bg-blue-500 hover:bg-blue-600 rounded-md text-sm">Send</button>
+      </div>
+      <div id="alerts" class="text-red-600 mt-2 text-center"></div>
+    </section>
+    
+
+    
+    
+    
+
+
+    <!-----
+ <section id="footer" class="hidden">
+      <div class="conect w-90 font-[sans-serif] flex md:gap-5 grid sm:grid-cols-1 md:grid-cols-2">
+        <div class="mt-8 space-y-4">
+            <input type='text' placeholder='Enter Your Name'
+                class="w-full rounded-md py-3 px-4 text-gray-800 bg-gray-100 focus:bg-white text-sm outline-blue-500" />
+            <input type='number' placeholder='Enter Your Phone'
+                class="w-full rounded-md py-3 px-4 text-gray-800 bg-gray-100 focus:bg-white text-sm outline-blue-500" />
+            <input type='password' placeholder='Enter Your Password'
+                class="w-full rounded-md py-3 px-4 text-gray-800 bg-gray-100 focus:bg-white text-sm outline-blue-500" />
+        </div>
+        <div class="mt-8 space-y-4">
+            <input type='email' placeholder='Enter Your Email'
+                class="w-full rounded-md py-3 px-4 text-gray-800 bg-gray-100 focus:bg-white text-sm outline-blue-500" />
+            <input type='number' placeholder='Enter Your Age'
+                class="w-full rounded-md py-3 px-4 text-gray-800 bg-gray-100 focus:bg-white text-sm outline-blue-500" />
+            <input type='password' placeholder='Re Password'
+                class="w-full rounded-md py-3 px-4 text-gray-800 bg-gray-100 focus:bg-white text-sm outline-blue-500" />
+        </div>
+  
+  </div>
+      <div class="btn">
+        <button type='button'
+        class="text-white bg-blue-500 hover:bg-blue-600 rounded-md text-sm">Send</button>
+      </div>
+    </section>
+
+    -->
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script src="../main.js"></script>
+</body>
+</html>
